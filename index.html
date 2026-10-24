@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppVault Premium - Hệ Thống Mua Ban & Cho Thuê Tài Khoản App ID</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            neon: '#a855f7',
+                            cyan: '#06b6d4',
+                            amber: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Inter & Font Awesome Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f8fafc;
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px -3px rgba(168, 85, 247, 0.4);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.4);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-950 text-xs py-2 px-4 text-center font-medium border-b border-purple-800/40 flex items-center justify-center gap-2">
+        <span class="bg-purple-500 text-white px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider animate-pulse">Khuyến mãi</span>
+        <span>Nạp tiền số dư tặng ngay +10% khuyến mãi cho đơn hàng đầu tiên hôm nay!</span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-3">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="filterCategory('all')">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white font-extrabold text-2xl shadow-lg shadow-purple-500/30">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">AppVault</span>
+                        <span class="text-[10px] text-cyan-400 font-semibold block -mt-1 tracking-wider uppercase">Premium & ID Rental</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Tìm Netflix, Spotify, Apple ID Shadowrocket, Canva..." 
+                        class="w-full bg-slate-900/90 text-xs sm:text-sm text-slate-200 placeholder-slate-400 rounded-full py-2.5 pl-10 pr-4 border border-slate-700/80 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all">
+                    <i class="fa-solid fa-magn<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeonStore — Premium Accounts & Apple ID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ BASE ============ */
+:root{
+  --bg:#05060b; --card:#0d111c; --line:rgba(255,255,255,.08);
+  --txt:#e8ecf7; --muted:#8b95ad;
+  --cyan:#00e5ff; --pink:#ff2bd6; --purple:#8b5cf6;
+  --green:#22e07a; --yellow:#ffc93c;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--bg); color:var(--txt); line-height:1.6;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 600px at 12% -10%, rgba(0,229,255,.14), transparent 60%),
+    radial-gradient(800px 600px at 88% 0%, rgba(255,43,214,.12), transparent 60%),
+    radial-gradient(700px 700px at 50% 110%, rgba(139,92,246,.14), transparent 60%);
+}
+body::after{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  -webkit-mask-image:radial-gradient(circle at 50% 30%,#000 20%,transparent 75%);
+  mask-image:radial-gradient(circle at 50% 30%,#000 20%,transparent 75%);
+}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.grad{background:linear-gradient(100deg,var(--cyan),var(--purple) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--muted)}
+.center{text-align:center}
+::-webkitifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                </div>
+
+                <!-- Wallet, Cart & Admin Quick Config -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- User Wallet Badge -->
+                    <div onclick="openDepositModal()" class="cursor-pointer glass-card hover:bg-slate-800/80 px-3 py-1.5 rounded-xl border border-purple-500/30 flex items-center gap-2.5 transition-all group">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <div class="text-left hidden sm:block">
+                            <span class="text-[10px] text-slate-400 block -mb-0.5">Ví Số Dư</span>
+                            <span id="userBalanceText" class="text-xs font-extrabold text-emerald-400">0đ</span>
+                        </div>
+                        <div class="bg-purple-600 group-hover:bg-purple-500 text-white text-[10px] font-bold p-1 rounded-md ml-1">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+
+                    <!-- User History Dashboard -->
+                    <button onclick="openHistoryModal()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition-all text-sm" title="Quản lý ID / Lịch sử mua">
+                        <i class="fa-solid fa-clock-rotate-left text-cyan-400"></i>
+                    </button>
+
+                    <!-- Admin Setting Quick Panel -->
+                    <button onclick="openAdminModal()" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition-all text-sm" title="Cấu hình STK Cá Nhân (Admin)">
+                        <i class="fa-solid fa-gear text-amber-400"></i>
+                    </button>
+
+                    <!-- Cart Button -->
+                    <button onclick="toggleCartModal()" class="relative bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl flex items-center gap-2 transition-all shadow-md shadow-purple-600/30">
+                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                        <span id="cartBadge" class="bg-pink-500 text-white text-[10px] font-bold rounded-full h-4 min-w-[16px] px-1 flex items-center justify-center border border-slate-900">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar -->
+            <div class="pb-3 md:hidden">
+                <div class="relative">
+                    <input type="text" id="mobileSearchInput" oninput="handleMobileSearch()" placeholder="Tìm ứng dụng, game, thuê ID..." 
+                        class="w-full bg-slate-900 text-xs text-slate-200 placeholder-slate-400 rounded-full py-2 pl-9 pr-4 border border-slate-700 focus:outline-none focus:border-purple-500">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="relative overflow-hidden py-10 md:py-16 border-b border-slate-800/80">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[280px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/4 right-10 w-[250px] h-[250px] bg-cyan-600/15 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-950/80 text-purple-300 border border-purple-500/30 mb-4">
+                    <i class="fa-solid fa-shield-halved text-purple-400"></i> Nạp số dư tự động - Thuê ID Apple nhận pass tức thì
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                    Kho Dịch Vụ <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Premium & ID App</span> Chính Chủ
+                </h1>
+                <p class="mt-3 text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                    Thuê lượt tải Apple ID Game trả phí, Shadowrocket, GoodNotes hoặc nâng cấp Netflix 4K, Spotify, Canva Pro giá cực ưu đãi. Thanh toán bằng Ví hoặc QR Ngân Hàng Tự Động!
+                </p>
+
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="scrollToSection('products-section')" class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition-all">
+                        <i class="fa-solid fa-store mr-1.5"></i> Xem danh sách App
+                    </button>
+                    <button onclick="openDepositModal()" class="px-6 py-2.5 rounded-xl glass-card text-emerald-400 font-bold text-xs hover:bg-slate-800 transition-all border border-emerald-500/30">
+                        <i class="fa-solid fa-money-bill-transfer mr-1.5"></i> Nạp Số Dư Ví Ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PRODUCT SECTION -->
+    <main id="products-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        
+        <!-- Category Filter & Types -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-fire text-amber-500"></i> Danh Sách Ứng Dụng & Dịch Vụ
+                </h2>
+                <p class="text-xs text-slate-400 mt-0.5">Lựa chọn danh mục phù hợp nhu cầu mua hoặc thuê của bạn</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+                <button onclick="filterCategory('all')" class="cat-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-purple-600 text-white whitespace-nowrap" data-cat="all">Tất cả</button>
+                <button onclick="filterCategory('appleid')" class="cat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap" data-cat="appleid">Thuê ID Apple/Game</button>
+                <button onclick="filterCategory('entertainment')" class="cat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap" data-cat="entertainment">Xem Phim / Phim Ảnh</button>
+                <button onclick="filterCategory('work')" class="cat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap" data-cat="work">Học Tập & AI</button>
+                <button onclick="filterCategory('design')" class="cat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap" data-cat="design">Thiết Kế / Edit Video</button>
+            </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <!-- Dynamic JS render products -->
+        </div>
+
+        <!-- No Result Message -->
+        <div id="noResults" class="hidden text-center py-16">
+            <i class="fa-solid fa-magnifying-glass text-4xl text-slate-600 mb-3"></i>
+            <p class="text-base font-semibold text-slate-300">Không tìm thấy ứng dụng phù hợp</p>
+            <p class="text-xs text-slate-500 mt-1">Vui lòng thử từ khóa khác hoặc chuyển bộ lọc.</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 pt-8 pb-6 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <div class="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center text-white font-bold text-base">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-base font-bold text-white">AppVault Store</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-relaxed">Hệ thống cho thuê ID Apple và bán tài khoản Premium bản quyền tự động 24/7. Uy tín, bảo hành 1 đổi 1.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-2.5">Hỗ Trợ Khách Hàng</h4>
+                    <ul class="space-y-1.5 text-[11px]">
+                        <li><a href="#" class="hover:text-purple-400 flex items-center gap-1.5"><i class="fa-solid fa-comment text-blue-400"></i> Zalo Support Admin</a></li>
+                        <li><a href="#" class="hover:text-purple-400 flex items-center gap-1.5"><i class="fa-brands fa-telegram text-cyan-400"></i> Telegram CSKH 24/7</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-2.5">Nạp & Thanh Toán</h4>
+                    <div class="flex flex-wrap gap-1.5 text-[10px]">
+                        <span class="px-2 py-0.5 bg-slate-900 rounded border border-slate-700 text-slate-300">VietQR Tự Động</span>
+                        <span class="px-2 py-0.5 bg-slate-900 rounded border border-slate-700 text-slate-300">Ví Số Dư Web</span>
+                        <span class="px-2 py-0.5 bg-slate-900 rounded border border-slate-700 text-slate-300">MB Bank / MoMo</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-2.5">Chủ Tài Khoản Hiện Tại</h4>
+                    <p class="text-[11px] text-slate-300" id="footerBankInfo">Ngân hàng: MB BANK - 0988888888 (ADMIN)</p>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-4 text-center text-[11px] text-slate-500">
+                &copy; 2026 AppVault. All rights reserved. Design for speed and security.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DEPOSIT / NAP TIEN SỐ DƯ -->
+    <div id="depositModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeDepositModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-1">
+                <i class="fa-solid fa-wallet text-emerald-400"></i> Nạp Số Dư Vào Ví
+            </h3>
+            <p class="text-xs text-slate-400 mb-4">Nạp tiền vào tài khoản để thanh toán dịch vụ tức thì 24/7</p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Nhập số tiền muốn nạp (VNĐ):</label>
+                    <input type="number" id="depositAmountInput" value="50000" min="10000" step="10000" oninput="updateDepositQR()" 
+                        class="w-full bg-slate-800 text-white font-bold text-sm rounded-xl px-3.5 py-2.5 border border-slate-700 focus:outline-none focus:border-purple-500">
+                    <div class="flex gap-1.5 mt-2">
+                        <button onclick="setDepositAmount(20000)" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-[11px] text-slate-300 border border-slate-700">+20k</button>
+                        <button onclick="setDepositAmount(50000)" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-[11px] text-slate-300 border border-slate-700">+50k</button>
+                        <button onclick="setDepositAmount(100000)" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-[11px] text-slate-300 border border-slate-700">+100k</button>
+                        <button onclick="setDepositAmount(200000)" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-[11px] text-slate-300 border border-slate-700">+200k</button>
+                    </div>
+                </div>
+
+                <!-- Generated QR VietQR Code -->
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <p class="text-xs text-slate-400 mb-2">Quét mã VietQR chuyển khoản cá nhân chủ shop:</p>
+                    <div class="bg-white p-2.5 rounded-lg inline-block shadow-inner">
+                        <img id="depositQRImg" src="" alt="VietQR Nạp Tiền" class="w-40 h-40 mx-auto">
+                    </div>
+
+                    <div class="mt-3 text-left space-y-1.5 text-xs bg-slate-900 p-3 rounded-lg border border-slate-800">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Ngân hàng:</span>
+                            <span id="depBankName" class="font-bold text-white">MB BANK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Số tài khoản:</span>
+                            <span id="depAccNum" class="font-bold text-cyan-400">0988888888</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Chủ tài khoản:</span>
+                            <span id="depAccName" class="font-bold text-white">NGUYEN VAN A</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-1 border-t border-slate-800">
+                            <span class="text-slate-400">Nội dung CK:</span>
+                            <span id="depMemoCode" class="font-bold text-amber-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-700">NAP50K USER123</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="copyDepositMemo()" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-copy mr-1"></i> Coppy Nội Dung
+                    </button>
+                    <button onclick="confirmDepositSuccess()" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white rounded-xl shadow-md">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Xác Nhận Đã CK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL BUY / RENT DETAIL -->
+    <div id="buyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 relative shadow-2xl">
+            <button onclick="closeBuyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="buyModalContent">
+                <!-- JS populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cartModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative shadow-2xl">
+            <button onclick="toggleCartModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping text-purple-400"></i> Giỏ Hàng Của Bạn
+            </h3>
+
+            <div id="cartItemsContainer" class="space-y-2.5 mb-4 max-h-52 overflow-y-auto pr-1">
+                <!-- JS Populated -->
+            </div>
+
+            <div class="border-t border-slate-800 pt-3 mb-4 flex justify-between items-center">
+                <span class="text-xs text-slate-400">Tổng cộng:</span>
+                <span id="cartTotalPrice" class="text-lg font-extrabold text-purple-400">0đ</span>
+            </div>
+
+            <button onclick="processCartCheckout()" class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-bold text-xs rounded-xl shadow-lg transition-all">
+                Thanh Toán Tất Cả Đơn Hàng
+            </button>
+        </div>
+    </div>
+
+    <!-- USER HISTORY MODAL -->
+    <div id="historyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 relative shadow-2xl">
+            <button onclick="closeHistoryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-clock-rotate-left text-cyan-400"></i> Lịch Sử Mua / Thuê ID Apple
+            </h3>
+            <p class="text-xs text-slate-400 mb-4">Danh sách tài khoản & mật khẩu bạn đã nhận từ hệ thống</p>
+
+            <div id="historyListContainer" class="space-y-3">
+                <!-- Dynamic Items -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN SETTINGS QUICK PANEL MODAL -->
+    <div id="adminModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-base font-bold text-white mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-amber-400"></i> Admin Quick Settings (Cài STK Shop)
+            </h3>
+            <p class="text-xs text-slate-400 mb-4">Thay đổi thông tin nhận tiền chuyển khoản của cá nhân bạn ở đây:</p>
+
+            <form onsubmit="saveAdminSettings(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Mã Ngân Hàng (MobiBanking):</label>
+                    <input type="text" id="cfgBankId" value="MB" placeholder="MB, VCB, TCB, ACB..." required class="w-full bg-slate-800 text-white rounded-lg px-3 py-2 border border-slate-700 focus:outline-none focus:border-purple-500">
+                    <span class="text-[10px] text-slate-500">Viết tắt ngân hàng (VD: MB, VCB, TECHCOMBANK, MOMO)</span>
+                </div>
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Số Tài Khoản Cá Nhân:</label>
+                    <input type="text" id="cfgAccNum" value="0988888888" required class="w-full bg-slate-800 text-white font-bold rounded-lg px-3 py-2 border border-slate-700 focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-slate-300 font-medium mb-1">Tên Chủ Tài Khoản (Viết hoa):</label>
+                    <input type="text" id="cfgAccName" value="NGUYEN VAN A" required class="w-full bg-slate-800 text-white rounded-lg px-3 py-2 border border-slate-700 focus:outline-none focus:border-purple-500">
+                </div>
+
+                <button type="submit" class="w-full mt-2 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition-all">
+                    Lưu Thay Đổi Cấu Hình Shop
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-800 text-white border border-purple-500/50 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMsg" class="text-xs font-semibold">Thông báo ở đây</span>
+    </div>
+
+    <!-- SCRIPT APPLICATION LOGIC -->
+    <script>
+        // ADMIN DEFAULT BANK CONFIG
+        let adminBankConfig = {
+            bankId: "MB",
+            accNum: "0988888888",
+            accName: "NGUYEN VAN A"
+        };
+
+        // USER STATE
+        let userBalance = 100000; // Demo ban đầu cho user 100k
+        let userHistory = [];
+        let cart = [];
+        let currentCategory = 'all';
+
+        // SAMPLE PRODUCTS DATABASE
+        const productsData = [
+            {
+                id: 1,
+                title: "Netflix Premium Extra Member 4K",
+                category: "entertainment",
+                type: "buy",
+                typeText: "Bán Gói Riêng",
+                price: 59000,
+                originalPrice: 90000,
+                period: "/tháng",
+                rating: 5.0,
+                reviewsCount: 340,
+                stockStatus: "Còn hàng (24)",
+                icon: "fa-brands fa-netflix",
+                iconBg: "bg-red-600",
+                badge: "Hot Best-Seller",
+                desc: "Profile riêng tư có PIN mã hóa, chất lượng 4K UHD nét cao. Xem mượt trên TV, Phone, PC.",
+                credential: "Email: netflix_vip01@appvault.com | Pass: Premium2026 | PIN: 8888"
+            },
+            {
+                id: 2,
+                title: "Thuê ID Apple Tải Shadowrocket + Minecraft",
+                category: "appleid",
+                type: "rent",
+                typeText: "Cho Thuê ID Tải App",
+                price: 15000,
+                originalPrice: 150000,
+                period: "/lượt tải",
+                rating: 4.9,
+                reviewsCount: 520,
+                stockStatus: "Sẵn sàng",
+                icon: "fa-brands fa-apple",
+                iconBg: "bg-slate-700",
+                badge: "Lượt Tải Nhanh",
+                desc: "Tài khoản ID Apple đã mua Shadowrocket $2.99 + Minecraft PE. Đăng nhập App Store tải trực tiếp về máy.",
+                credential: "ID: apple_shadowrocket@store.com | Pass: VaultPass#2026 (Chỉ nhập App Store, KHÔNG nhập iCloud!)"
+            },
+            {
+                id: 3,
+                title: "Spotify Premium 1 Năm Chính Chủ",
+                category: "entertainment",
+                type: "buy",
+                typeText: "Nâng Cấp Email",
+                price: 189000,
+                originalPrice: 590000,
+                period: "/12 tháng",
+                rating: 5.0,
+                reviewsCount: 290,
+                stockStatus: "Còn hàng",
+                icon: "fa-brands fa-spotify",
+                iconBg: "bg-emerald-500",
+                badge: "Tiết kiệm 70%",
+                desc: "Nâng cấp gói Premium trực tiếp vào tài khoản Email cá nhân của bạn. Không mất Playlist bài hát.",
+                credential: "Hệ thống đã gửi link kích hoạt Family qua Email đăng ký của bạn!"
+            },
+            {
+                id: 4,
+                title: "Canva ProEdu Bản Quyền",
+                category: "design",
+                type: "buy",
+                typeText: "Bản Quyền 1 Năm",
+                price: 79000,
+                originalPrice: 300000,
+                period: "/1 năm",
+                rating: 4.8,
+                reviewsCount: 410,
+                stockStatus: "Còn hàng",
+                icon: "fa-solid fa-pen-nib",
+                iconBg: "bg-cyan-500",
+                badge: "Khuyên Dùng",
+                desc: "Mở khóa trọn bộ Element Pro, Magic AI Write, Xóa nền 1-Click, Resize thiết kế chuẩn kích thước.",
+                credential: "Lời mời kích hoạt Canva Pro đã chuyển vào Email cá nhân của bạn!"
+            },
+            {
+                id: 5,
+                title: "Thuê ID Apple GoodNotes 6 + Notability VIP",
+                category: "appleid",
+                type: "rent",
+                typeText: "Cho Thuê ID Tải App",
+                price: 20000,
+                originalPrice: 400000,
+                period: "/lượt tải",
+                rating: 5.0,
+                reviewsCount: 180,
+                stockStatus: "Sẵn sàng",
+                icon: "fa-solid fa-book-open",
+                iconBg: "bg-blue-600",
+                badge: "Học Tập",
+                desc: "Apple ID mở khóa sẵn GoodNotes 6 Full Sổ tay + Notability bản quyền vĩnh viễn cho iPad/iPhone.",
+                credential: "ID: apple_goodnotes6@store.com | Pass: AppVault#8899"
+            },
+            {
+                id: 6,
+                title: "ChatGPT Plus (GPT-4o & DALL-E 3)",
+                category: "work",
+                type: "buy",
+                typeText: "Gói Dùng Chung",
+                price: 89000,
+                originalPrice: 490000,
+                period: "/tháng",
+                rating: 4.9,
+                reviewsCount: 610,
+                stockStatus: "Sắp hết (3)",
+                icon: "fa-solid fa-robot",
+                iconBg: "bg-teal-600",
+                badge: "Siêu Hot AI",
+                desc: "Truy cập siêu trí tuệ GPT-4o, vẽ ảnh DALL-E 3 nét cao, phân tích dữ liệu nhanh gấp 5 lần bản Free.",
+                credential: "Email: gpt4o_shared@appvault.com | Pass: AIPlus2026"
+            },
+            {
+                id: 7,
+                title: "CapCut Pro PC & Mobile",
+                category: "design",
+                type: "buy",
+                typeText: "Tài Khoản Gói VIP",
+                price: 49000,
+                originalPrice: 150000,
+                period: "/3 tháng",
+                rating: 5.0,
+                reviewsCount: 390,
+                stockStatus: "Còn hàng",
+                icon: "fa-solid fa-video",
+                iconBg: "bg-slate-900",
+                badge: "Dành Cho Editor",
+                desc: "Mở toàn bộ Hiệu ứng hiệu ứng VIP, Auto phụ đề tiếng Việt tự động, Xuất Video 4K không dính logo.",
+                credential: "Email: capcut_pro@appvault.com | Pass: EditPro2026"
+            },
+            {
+                id: 8,
+                title: "YouTube Premium Tắt Màn Hình",
+                category: "entertainment",
+                type: "buy",
+                typeText: "Chính Chủ 1 Năm",
+                price: 299000,
+                originalPrice: 790000,
+                period: "/1 năm",
+                rating: 5.0,
+                reviewsCount: 880,
+                stockStatus: "Còn hàng",
+                icon: "fa-brands fa-youtube",
+                iconBg: "bg-red-700",
+                badge: "Chính Chủ",
+                desc: "Xem clip không dính quảng cáo, phát nhạc ngầm khi tắt màn hình, bao gồm YouTube Music VIP.",
+                credential: "Tài khoản YouTube Email của bạn đã được gia hạn thành công 12 tháng!"
+            }
+        ];
+
+        // FORMAT CURRENCY
+        function formatVND(amt) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amt);
+        }
+
+        // INIT APP
+        window.onload = function() {
+            loadLocalSettings();
+            updateBalanceUI();
+            renderProducts(productsData);
+            updateDepositQR();
+        }
+
+        // LOCAL STORAGE
+        function loadLocalSettings() {
+            const savedCfg = localStorage.getItem('appvault_admin_cfg');
+            if (savedCfg) adminBankConfig = JSON.parse(savedCfg);
+
+            document.getElementById('cfgBankId').value = adminBankConfig.bankId;
+            document.getElementById('cfgAccNum').value = adminBankConfig.accNum;
+            document.getElementById('cfgAccName').value = adminBankConfig.accName;
+
+            updateBankFooterText();
+        }
+
+        function updateBankFooterText() {
+            document.getElementById('footerBankInfo').innerText = `Ngân hàng: ${adminBankConfig.bankId} - ${adminBankConfig.accNum} (${adminBankConfig.accName})`;
+        }
+
+        // RENDER PRODUCTS
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            const noRes = document.getElementById('noResults');
+
+            if (!items || items.length === 0) {
+                grid.innerHTML = '';
+                noRes.classList.remove('hidden');
+                return;
+            }
+
+            noRes.classList.add('hidden');
+            grid.innerHTML = items.map(p => `
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 transition-all flex flex-col group">
+                    <div class="p-4 sm:p-5 flex-grow">
+                        <div class="flex items-start justify-between gap-2 mb-3">
+                            <div class="w-11 h-11 ${p.iconBg} rounded-xl flex items-center justify-center text-white text-xl shadow-md group-hover:scale-105 transition-transform">
+                                <i class="${p.icon}"></i>
+                            </div>
+                            <div class="text-right">
+                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${p.type === 'rent' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/30' : 'bg-purple-500/10 text-purple-400 border border-purple-500/30'}">
+                                    ${p.typeText}
+                                </span>
+                                <span class="block text-[10px] text-emerald-400 font-medium mt-1"><i class="fa-solid fa-circle-check"></i> ${p.stockStatus}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-white group-hover:text-purple-300 transition-colors line-clamp-1">${p.title}</h3>
+                        
+                        <div class="flex items-center gap-1 text-[11px] text-amber-400 mt-1 mb-2">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="font-bold text-slate-200">${p.rating}</span>
+                            <span class="text-slate-500">(${p.reviewsCount} đã mua)</span>
+                        </div>
+
+                        <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-3">${p.desc}</p>
+                    </div>
+
+                    <div class="p-3.5 bg-slate-950/80 border-t border-slate-800/80 flex items-center justify-between gap-2 mt-auto">
+                        <div>
+                            <div class="text-[10px] text-slate-500 line-through">${formatVND(p.originalPrice)}</div>
+                            <div class="text-sm font-extrabold text-purple-400">
+                                ${formatVND(p.price)}<span class="text-[10px] text-slate-400 font-normal">${p.period}</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-1.5">
+                            <button onclick="addToCart(${p.id})" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors text-xs" title="Thêm giỏ hàng">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                            <button onclick="openBuyModal(${p.id})" class="px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-600/30 transition-all">
+                                ${p.type === 'rent' ? 'Thuê Ngay' : 'Mua Ngay'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // FILTER CATEGORIES
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                    btn.classList.add('bg-purple-600', 'text-white');
+                } else {
+                    btn.classList.remove('bg-purple-600', 'text-white');
+                    btn.classList.add('bg-slate-800', 'text-slate-300');
+                }
+            });
+
+            if (cat === 'all') renderProducts(productsData);
+            else renderProducts(productsData.filter(p => p.category === cat));
+        }
+
+        // SEARCH
+        function handleSearch() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            executeSearch(q);
+        }
+        function handleMobileSearch() {
+            const q = document.getElementById('mobileSearchInput').value.toLowerCase().trim();
+            executeSearch(q);
+        }
+        function executeSearch(q) {
+            if (!q) { filterCategory(currentCategory); return; }
+            const res = productsData.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+            renderProducts(res);
+        }
+
+        // WALLET BALANCE & DEPOSIT MODAL
+        function updateBalanceUI() {
+            document.getElementById('userBalanceText').innerText = formatVND(userBalance);
+        }
+
+        function openDepositModal() {
+            document.getElementById('depositModal').classList.remove('hidden');
+            updateDepositQR();
+        }
+
+        function closeDepositModal() {
+            document.getElementById('depositModal').classList.add('hidden');
+        }
+
+        function setDepositAmount(amt) {
+            document.getElementById('depositAmountInput').value = amt;
+            updateDepositQR();
+        }
+
+        function updateDepositQR() {
+            const amt = document.getElementById('depositAmountInput').value || 50000;
+            const memo = "NAP" + (amt / 1000) + "K USER88";
+
+            document.getElementById('depBankName').innerText = adminBankConfig.bankId;
+            document.getElementById('depAccNum').innerText = adminBankConfig.accNum;
+            document.getElementById('depAccName').innerText = adminBankConfig.accName;
+            document.getElementById('depMemoCode').innerText = memo;
+
+            // Generate VietQR Link Dynamic
+            const qrUrl = `https://img.vietqr.io/image/${adminBankConfig.bankId}-${adminBankConfig.accNum}-compact2.png?amount=${amt}&addInfo=${encodeURIComponent(memo)}&accountName=${encodeURIComponent(adminBankConfig.accName)}`;
+            document.getElementById('depositQRImg').src = qrUrl;
+        }
+
+        function copyDepositMemo() {
+            const memo = document.getElementById('depMemoCode').innerText;
+            navigator.clipboard.writeText(memo);
+            showToast("Đã sao chép nội dung chuyển khoản!");
+        }
+
+        function confirmDepositSuccess() {
+            const amt = parseInt(document.getElementById('depositAmountInput').value) || 50000;
+            userBalance += amt;
+            updateBalanceUI();
+            closeDepositModal();
+            showToast(`Thành công! Đã cộng +${formatVND(amt)} vào số dư Ví của bạn.`, "success");
+        }
+
+        // MODAL BUY DETAIL & DIRECT PAY
+        function openBuyModal(id) {
+            const item = productsData.find(p => p.id === id);
+            if (!item) return;
+
+            const modalContent = document.getElementById('buyModalContent');
+            const memoDirect = "PAY" + item.id + " USER88";
+            const directQr = `https://img.vietqr.io/image/${adminBankConfig.bankId}-${adminBankConfig.accNum}-compact2.png?amount=${item.price}&addInfo=${encodeURIComponent(memoDirect)}&accountName=${encodeURIComponent(adminBankConfig.accName)}`;
+
+            modalContent.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center text-white text-2xl shadow-md">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">${item.typeText}</span>
+                        <h3 class="text-base font-bold text-white">${item.title}</h3>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950/80 rounded-xl p-3.5 mb-4 border border-slate-800 text-xs space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400">Giá thanh toán:</span>
+                        <span class="text-lg font-black text-purple-400">${formatVND(item.price)} <span class="text-[10px] text-slate-400 font-normal">${item.period}</span></span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">${item.desc}</p>
+                </div>
+
+                <!-- Choose Pay Method -->
+                <div class="mb-5">
+                    <label class="block text-xs font-bold text-slate-200 mb-2">Lựa chọn hình thức thanh toán:</label>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <label onclick="togglePayOption('wallet')" class="border border-slate-700 rounded-xl p-3 flex flex-col items-center cursor-pointer hover:border-purple-500 bg-slate-800/80">
+                            <i class="fa-solid fa-wallet text-emerald-400 text-lg mb-1"></i>
+                            <span class="text-xs font-bold text-white">Thanh Toán Bằng Ví</span>
+                            <span class="text-[10px] text-emerald-400 mt-0.5">Số dư: ${formatVND(userBalance)}</span>
+                        </label>
+
+                        <label onclick="togglePayOption('qr')" class="border border-slate-700 rounded-xl p-3 flex flex-col items-center cursor-pointer hover:border-purple-500 bg-slate-800/80">
+                            <i class="fa-solid fa-qrcode text-cyan-400 text-lg mb-1"></i>
+                            <span class="text-xs font-bold text-white">Quét Mã QR Chuyển Khoản</span>
+                            <span class="text-[10px] text-slate-400 mt-0.5">Tự động nhận tài khoản</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Option Wallet Pay Box -->
+                <div id="payBoxWallet" class="space-y-3">
+                    <button onclick="payWithWallet(${item.id})" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> Xác Nhận Thanh Toán Ngay (${formatVND(item.price)})
+                    </button>
+                </div>
+
+                <!-- Option QR Pay Box -->
+                <div id="payBoxQR" class="hidden space-y-3 text-center bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+                    <p class="text-xs text-slate-300 font-medium">Quét mã QR để hoàn tất thanh toán trực tiếp:</p>
+                    <img src="${directQr}" alt="QR Thanh Toán" class="w-40 h-40 mx-auto rounded-lg bg-white p-2">
+                    <div class="text-left text-[11px] bg-slate-900 p-2.5 rounded-lg border border-slate-800 space-y-1">
+                        <p class="text-slate-400">Nội dung CK: <span class="text-amber-400 font-bold">${memoDirect}</span></p>
+                        <p class="text-slate-400">STK: <span class="text-white font-bold">${adminBankConfig.accNum} (${adminBankConfig.bankId})</span></p>
+                    </div>
+                    <button onclick="payWithQRSimulated(${item.id})" class="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl">
+                        <i class="fa-solid fa-check"></i> Đã Chuyển Khoản - Nhận ID Ngay
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('buyModal').classList.remove('hidden');
+        }
+
+        function togglePayOption(type) {
+            const wBox = document.getElementById('payBoxWallet');
+            const qBox = document.getElementById('payBoxQR');
+            if (type === 'wallet') {
+                wBox.classList.remove('hidden');
+                qBox.classList.add('hidden');
+            } else {
+                wBox.classList.add('hidden');
+                qBox.classList.remove('hidden');
+            }
+        }
+
+        function closeBuyModal() {
+            document.getElementById('buyModal').classList.add('hidden');
+        }
+
+        // PAY LOGIC
+        function payWithWallet(productId) {
+            const item = productsData.find(p => p.id === productId);
+            if (!item) return;
+
+            if (userBalance < item.price) {
+                showToast("Số dư Ví không đủ! Vui lòng nạp thêm.", "error");
+                openDepositModal();
+                return;
+            }
+
+            userBalance -= item.price;
+            updateBalanceUI();
+
+            // Save History
+            userHistory.unshift({
+                title: item.title,
+                price: item.price,
+                date: new Date().toLocaleString('vi-VN'),
+                credential: item.credential
+            });
+
+            closeBuyModal();
+            showToast(`Thanh toán thành công! Đã nhận thông tin gói.`, "success");
+            openHistoryModal();
+        }
+
+        function payWithQRSimulated(productId) {
+            const item = productsData.find(p => p.id === productId);
+            if (!item) return;
+
+            userHistory.unshift({
+                title: item.title,
+                price: item.price,
+                date: new Date().toLocaleString('vi-VN'),
+                credential: item.credential
+            });
+
+            closeBuyModal();
+            showToast(`Chuyển khoản thành công! Đã cấp ID/Tài khoản cho bạn.`, "success");
+            openHistoryModal();
+        }
+
+        // CART LOGIC
+        function addToCart(id) {
+            const item = productsData.find(p => p.id === id);
+            if (!item) return;
+            cart.push(item);
+            updateCartUI();
+            showToast(`Đã thêm "${item.title}" vào giỏ hàng!`);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartBadge').innerText = cart.length;
+            const container = document.getElementById('cartItemsContainer');
+            const totalElement = document.getElementById('cartTotalPrice');
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-xs text-slate-500 text-center py-4">Giỏ hàng trống</p>`;
+                totalElement.innerText = formatVND(0);
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map((item, index) => {
+                total += item.price;
+                return `
+                    <div class="flex items-center justify-between gap-2 bg-slate-800/80 p-2.5 rounded-xl border border-slate-700">
+                        <div class="truncate flex-1">
+                            <h5 class="text-xs font-bold text-white truncate">${item.title}</h5>
+                            <span class="text-[10px] text-purple-400 font-bold">${formatVND(item.price)}</span>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-slate-500 hover:text-red-400 text-xs px-2">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            totalElement.innerText = formatVND(total);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCartModal() {
+            document.getElementById('cartModal').classList.toggle('hidden');
+        }
+
+        function processCartCheckout() {
+            if (cart.length === 0) {
+                showToast("Giỏ hàng đang trống!", "error");
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            if (userBalance < total) {
+                showToast("Số dư ví không đủ thanh toán toàn bộ giỏ hàng!", "error");
+                toggleCartModal();
+                openDepositModal();
+                return;
+            }
+
+            userBalance -= total;
+            updateBalanceUI();
+
+            cart.forEach(item => {
+                userHistory.unshift({
+                    title: item.title,
+                    price: item.price,
+                    date: new Date().toLocaleString('vi-VN'),
+                    credential: item.credential
+                });
+            });
+
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+            showToast("Thanh toán thành công toàn bộ đơn hàng trong giỏ!", "success");
+            openHistoryModal();
+        }
+
+        // HISTORY DASHBOARD
+        function openHistoryModal() {
+            const container = document.getElementById('historyListContainer');
+            if (userHistory.length === 0) {
+                container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Bạn chưa mua hoặc thuê tài khoản nào.</p>`;
+            } else {
+                container.innerHTML = userHistory.map(h => `
+                    <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 text-xs space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">${h.title}</h4>
+                                <span class="text-[10px] text-slate-500">${h.date}</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-emerald-400">${formatVND(h.price)}</span>
+                        </div>
+                        <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-amber-300 font-mono text-[11px] select-all break-all">
+                            <i class="fa-solid fa-key mr-1 text-slate-400"></i> ${h.credential}
+                        </div>
+                    </div>
+                `).join('');
+            }
+            document.getElementById('historyModal').classList.remove('hidden');
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').classList.add('hidden');
+        }
+
+        // ADMIN QUICK CONFIG MODAL
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function saveAdminSettings(e) {
+            e.preventDefault();
+            adminBankConfig.bankId = document.getElementById('cfgBankId').value.trim().toUpperCase();
+            adminBankConfig.accNum = document.getElementById('cfgAccNum').value.trim();
+            adminBankConfig.accName = document.getElementById('cfgAccName').value.trim().toUpperCase();
+
+            localStorage.setItem('appvault_admin_cfg', JSON.stringify(adminBankConfig));
+            updateBankFooterText();
+            closeAdminModal();
+            showToast("Đã cập nhật cấu hình STK Ngân hàng chủ shop thành công!", "success");
+        }
+
+        // TOAST HELPER
+        function showToast(msg, type = "success") {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMsg.innerText = msg;
+            if (type === "error") {
+                toastIcon.className = "fa-solid fa-circle-xmark text-red-400 text-lg";
+            } else {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
